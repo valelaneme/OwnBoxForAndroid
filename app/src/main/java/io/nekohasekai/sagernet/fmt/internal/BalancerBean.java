@@ -70,19 +70,19 @@ public class BalancerBean extends InternalBean {
     public String getStrategyDetailText() {
         String stratName;
         if (STRATEGY_LEAST_PING.equals(strategy)) {
-            stratName = "延迟";
+            stratName = "Ping";
         } else if (STRATEGY_LEAST_LOAD.equals(strategy)) {
-            stratName = "负载";
+            stratName = "Load";
         } else if (STRATEGY_RANDOM.equals(strategy)) {
-            stratName = "随机";
+            stratName = "Rand";
         } else if (STRATEGY_ROUND_ROBIN.equals(strategy) || STRATEGY_ROUND_ROBIN_LEGACY.equals(strategy)) {
-            stratName = "轮询";
+            stratName = "Poll";
         } else if (STRATEGY_FAILOVER.equals(strategy)) {
             stratName = "故障";
         } else if (STRATEGY_STABLE.equals(strategy)) {
             stratName = "稳定";
         } else if (STRATEGY_CONSISTENT_HASH.equals(strategy) || STRATEGY_CONSISTENT_HASH_CAMEL.equals(strategy)) {
-            stratName = "哈希";
+            stratName = "Hash";
         } else {
             stratName = strategy != null ? strategy : STRATEGY_LEAST_PING;
         }
