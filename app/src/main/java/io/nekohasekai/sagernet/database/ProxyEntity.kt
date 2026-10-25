@@ -231,7 +231,8 @@ data class ProxyEntity(
         TYPE_SHADOWTLS -> "ShadowTLS"
         TYPE_ANYTLS -> "AnyTLS"
         TYPE_CHAIN -> chainName
-        TYPE_BALANCER -> balancerName
+        //TYPE_BALANCER -> balancerName
+        TYPE_BALANCER -> balancerBean?.getStrategyDetailText() ?: balancerName
         TYPE_NEKO -> nekoBean!!.displayType()
         TYPE_CONFIG -> configBean!!.displayType()
         TYPE_SNELL -> "Snell"
