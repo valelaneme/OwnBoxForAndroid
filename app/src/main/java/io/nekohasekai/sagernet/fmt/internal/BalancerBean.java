@@ -70,28 +70,28 @@ public class BalancerBean extends InternalBean {
     public String getStrategyDetailText() {
         String stratName;
         if (STRATEGY_LEAST_PING.equals(strategy)) {
-            stratName = "最低延迟";
+            stratName = "延迟";
         } else if (STRATEGY_LEAST_LOAD.equals(strategy)) {
-            stratName = "最低负载";
+            stratName = "负载";
         } else if (STRATEGY_RANDOM.equals(strategy)) {
-            stratName = "随机选择";
+            stratName = "随机";
         } else if (STRATEGY_ROUND_ROBIN.equals(strategy) || STRATEGY_ROUND_ROBIN_LEGACY.equals(strategy)) {
             stratName = "轮询";
         } else if (STRATEGY_FAILOVER.equals(strategy)) {
-            stratName = "故障转移";
+            stratName = "故障";
         } else if (STRATEGY_STABLE.equals(strategy)) {
-            stratName = "最稳定";
+            stratName = "稳定";
         } else if (STRATEGY_CONSISTENT_HASH.equals(strategy) || STRATEGY_CONSISTENT_HASH_CAMEL.equals(strategy)) {
-            stratName = "一致性哈希";
+            stratName = "哈希";
         } else {
             stratName = strategy != null ? strategy : STRATEGY_LEAST_PING;
         }
         if (balancerType == TYPE_GROUP) {
             int gCount = targetGroupIds != null && !targetGroupIds.isEmpty() ? targetGroupIds.size() : (targetGroupId > 0 ? 1 : 0);
-            return stratName + gCount;
+            return stratName + " " + gCount + "G";
         } else {
             int count = proxies != null ? proxies.size() : 0;
-            return stratName + count;
+            return stratName + " " + count + "N";
         }
     }
 
