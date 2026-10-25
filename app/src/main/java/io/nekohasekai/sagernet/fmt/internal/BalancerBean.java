@@ -88,7 +88,7 @@ public class BalancerBean extends InternalBean {
         }
         if (balancerType == TYPE_GROUP) {
             int gCount = targetGroupIds != null && !targetGroupIds.isEmpty() ? targetGroupIds.size() : (targetGroupId > 0 ? 1 : 0);
-            return stratName + " 㗊 " + gCount;
+            return stratName + " ✧ " + gCount;
         } else {
             int count = proxies != null ? proxies.size() : 0;
             return stratName + " ∷ " + count;
