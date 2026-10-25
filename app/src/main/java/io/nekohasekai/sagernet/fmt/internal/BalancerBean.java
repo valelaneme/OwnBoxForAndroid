@@ -88,10 +88,10 @@ public class BalancerBean extends InternalBean {
         }
         if (balancerType == TYPE_GROUP) {
             int gCount = targetGroupIds != null && !targetGroupIds.isEmpty() ? targetGroupIds.size() : (targetGroupId > 0 ? 1 : 0);
-            return stratName + " " + gCount + "G";
+            return stratName + " 㗊 " + gCount;
         } else {
             int count = proxies != null ? proxies.size() : 0;
-            return stratName + " " + count + "N";
+            return stratName + " ∷ " + count;
         }
     }
 
