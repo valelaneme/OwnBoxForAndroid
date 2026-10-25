@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_search"
-        android:title="@android:string/search_go"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="always" />
+
 
     <item
         android:id="@+id/action_add"
@@ -93,9 +89,21 @@
     </item>
 
     <item
+        android:id="@+id/action_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/menu_dashboard"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_connection_url_test"
         android:icon="@drawable/ic_baseline_speed_24"
         android:title="@string/connection_test_url_test"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@android:string/search_go"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
 
     <item
