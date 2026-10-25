@@ -66,8 +66,8 @@ public class BalancerBean extends InternalBean {
         }
     }
 
-    @Override
-    public String displayAddress() {
+// 1. 新增的方法：用来生成给底部标签显示的策略详情
+    public String getStrategyDetailText() {
         String stratName;
         if (STRATEGY_LEAST_PING.equals(strategy)) {
             stratName = "最低延迟";
@@ -88,12 +88,14 @@ public class BalancerBean extends InternalBean {
         }
         if (balancerType == TYPE_GROUP) {
             int gCount = targetGroupIds != null && !targetGroupIds.isEmpty() ? targetGroupIds.size() : (targetGroupId > 0 ? 1 : 0);
-            return "[分组 (" + gCount + ")] 策略: " + stratName;
+            return stratName + gCount;
         } else {
             int count = proxies != null ? proxies.size() : 0;
-            return "[节点 (" + count + ")] 策略: " + stratName;
+            return stratName + count;
         }
     }
+
+
 
     @Override
     public void initializeDefaultValues() {
