@@ -94,7 +94,7 @@
 
     <item
         android:id="@+id/action_connection_url_test"
-        android:icon="@drawable/ic_action_refresh"
+        android:icon="@drawable/ic_action_resolve"
         android:title="@string/connection_test_url_test"
         app:showAsAction="always" />
 
@@ -202,5 +202,4 @@
             </group>
         </menu>
     </item>
-
 </menu>
