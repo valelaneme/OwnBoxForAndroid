@@ -94,7 +94,7 @@
 
     <item
         android:id="@+id/action_connection_url_test"
-        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:icon="@drawable/ic_baseline_speed_24"
         android:title="@string/connection_test_url_test"
         app:showAsAction="always" />
 
