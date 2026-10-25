@@ -88,13 +88,18 @@ jobs:
         run: |
           echo "sdk.dir=${ANDROID_HOME}" > local.properties
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
+
+          # 如果配置了 Secrets 密钥则解密使用，否则自动生成临时自签名证书
           if [ -n "$KEYSTORE_BASE64" ]; then
             echo "$KEYSTORE_BASE64" | base64 -d > release.keystore
+          else
+            echo "::warning::No keystore secret provided. Creating a temporary keystore for preview release..."
+            keytool -genkeypair -v -keystore release.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+            KEYSTORE_PASS="android"
+            ALIAS_NAME="androiddebugkey"
+            ALIAS_PASS="android"
           fi
-          if [ ! -f "release.keystore" ] || [ -z "$KEYSTORE_PASS" ]; then
-            echo "::error::Release signing credentials missing. Refusing to build unsigned preview release."
-            exit 1
-          fi
+
           echo "KEYSTORE_PASS=$KEYSTORE_PASS" >> local.properties
           echo "ALIAS_NAME=$ALIAS_NAME" >> local.properties
           echo "ALIAS_PASS=$ALIAS_PASS" >> local.properties
