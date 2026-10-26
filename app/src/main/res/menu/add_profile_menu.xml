@@ -138,7 +138,14 @@
                 <item
                     android:id="@+id/action_update_subscription"
                     android:title="@string/update_current_subscription" />
-
+    <!-- 44. 删除重复服务器 -->
+                <item
+                    android:id="@+id/action_remove_duplicate"
+                    android:title="@string/remove_duplicate" />
+    <!-- 45. 清理不可用配置 -->
+                <item
+                    android:id="@+id/action_connection_test_delete_unavailable"
+                    android:title="@string/connection_test_delete_unavailable" />
     <!-- 46. 隐藏不可用节点 -->
 
                 <item
@@ -151,22 +158,15 @@
     <!-- 44. 测速 -->
             
             <group android:id="@+id/group_actions_test">
-    <!-- 44. 删除重复服务器 -->
                 <item
-                    android:id="@+id/action_remove_duplicate"
-                    android:title="@string/remove_duplicate" />
-    <!-- 45. 清理不可用配置 -->
+                    android:id="@+id/action_connection_tcp_ping"
+                    android:title="@string/connection_test_tcp_ping" />
                 <item
-                    android:id="@+id/action_connection_test_delete_unavailable"
-                    android:title="@string/connection_test_delete_unavailable" />
-    <!-- 45. 清理不可用配置 -->
-                
+                    android:id="@+id/action_speed_test_group"
+                    android:title="@string/speed_test_group" />
                 <item
                     android:id="@+id/action_connection_test_clear_results"
                     android:title="@string/connection_test_clear_results" />
-    <!-- 45. 清理不可用配置 -->
-
-                
                 <item
                     android:id="@+id/action_clear_traffic_statistics"
                     android:title="@string/clear_traffic_statistics" />                
