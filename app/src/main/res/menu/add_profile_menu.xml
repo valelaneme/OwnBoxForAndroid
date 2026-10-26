@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
+    <!-- 1. 新建 -->
     <item
         android:id="@+id/action_add"
         android:icon="@drawable/ic_action_note_add"
@@ -88,24 +88,28 @@
         </menu>
     </item>
 
-    <item
-        android:id="@+id/action_dashboard"
-        android:icon="@drawable/ic_dashboard"
-        android:title="@string/menu_dashboard"
-        app:showAsAction="ifRoom" />
-
+    <!-- 2. 测速 -->
     <item
         android:id="@+id/action_connection_url_test"
         android:icon="@drawable/ic_baseline_speed_24"
         android:title="@string/connection_test_url_test"
         app:showAsAction="always" />
 
+    <!-- 3. Dashboard -->
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/menu_dashboard"
+        app:showAsAction="always" />
+
+    <!-- 4. 搜索 -->
     <item
         android:id="@+id/action_search"
         android:title="@android:string/search_go"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
 
+    <!-- 5. 更多操作 -->
     <item
         android:id="@+id/action_misc"
         android:icon="@drawable/ic_baseline_more_vert_24"
