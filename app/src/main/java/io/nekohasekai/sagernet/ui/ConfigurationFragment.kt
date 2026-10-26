@@ -1553,6 +1553,7 @@ R.id.action_connection_url_test -> {
                     Toast.makeText(ctx, "无法打开浏览器", Toast.LENGTH_SHORT).show()
                 }
             }
+            return true // 👈 加上这一句 return true
         }
             R.id.action_connection_tcp_ping -> {
                 tcpPingTest()
