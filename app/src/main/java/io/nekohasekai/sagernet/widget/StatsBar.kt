@@ -161,15 +161,22 @@ class StatsBar @JvmOverloads constructor(
                 if (DataStore.hapticFeedback) {
                     v.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS)
                 }
-         (context as? io.nekohasekai.sagernet.ui.MainActivity)?.let { mainActivity ->
-                    mainActivity.findViewById<com.google.android.material.navigation.NavigationView>(io.nekohasekai.sagernet.R.id.nav_view)
-                        ?.menu?.findItem(io.nekohasekai.sagernet.R.id.nav_dashboard)
-                        ?.let { mainActivity.onNavigationItemSelected(it) }
-                }
-                }
-                true
-            }
 
+
+                
+binding.root.setOnLongClickListener {
+            (context as? io.nekohasekai.sagernet.ui.MainActivity)?.let { mainActivity ->
+                mainActivity.findViewById<com.google.android.material.navigation.NavigationView>(io.nekohasekai.sagernet.R.id.nav_view)
+                    ?.menu?.findItem(io.nekohasekai.sagernet.R.id.nav_dashboard)
+                    ?.let { mainActivity.onNavigationItemSelected(it) }
+            }
+            true
+        }
+
+
+
+
+        
             this.setOnLongClickListener(onCardLongClick)
             val container = findViewById<View>(R.id.stats_content_container)
             container?.setOnLongClickListener(onCardLongClick)
