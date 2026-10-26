@@ -163,20 +163,17 @@ class StatsBar @JvmOverloads constructor(
                 }
                 
                 
+
                 
                 
-val cached = LandingIpManager.getCachedInfo()
-                val activity = context as? Activity
-                if (activity != null) {
-                    if (cached != null) {
-                        LandingIpBottomSheet.show(activity, cached) {
-                            refreshLandingIp(forceRefresh = true)
-                            retestLatencyInPlace()
-                        }
-                    } else {
-                        refreshLandingIp(forceRefresh = true)
+(context as? androidx.appcompat.app.AppCompatActivity)?.let { activity ->
+                    val toolbar = activity.findViewById<androidx.appcompat.widget.Toolbar>(io.nekohasekai.sagernet.R.id.toolbar)
+                    val dashboardItem = toolbar?.menu?.findItem(io.nekohasekai.sagernet.R.id.nav_dashboard)
+                    if (dashboardItem != null) {
+                        activity.onOptionsItemSelected(dashboardItem)
                     }
-}
+                }
+
 
 
 
