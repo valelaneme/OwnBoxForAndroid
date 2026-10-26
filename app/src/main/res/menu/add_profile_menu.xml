@@ -25,7 +25,14 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
 
-
+    <!-- 4. 更多操作 -->
+    <item
+        android:id="@+id/action_misc"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <group android:id="@+id/group_actions_ops">
     
     <!-- 41. 新建 -->
     <item
@@ -112,14 +119,7 @@
             </item>
         </menu>
     </item>
-    <!-- 4. 更多操作 -->
-    <item
-        android:id="@+id/action_misc"
-        android:icon="@drawable/ic_baseline_more_vert_24"
-        android:title=""
-        app:showAsAction="always">
-        <menu>
-            <group android:id="@+id/group_actions_ops">
+    <!-- 42. 导出 -->
                 <item
                     android:id="@+id/action_export"
                     android:title="@string/action_export">
@@ -135,10 +135,15 @@
                             android:title="@string/action_qr_code" />
                     </menu>
                 </item>
+    <!-- 43. 更新 -->
                 <item
                     android:id="@+id/action_update_subscription"
                     android:title="@string/update_current_subscription" />
-
+    <!-- 44. 删除重复服务器 -->
+                
+                <item
+                    android:id="@+id/action_remove_duplicate"
+                    android:title="@string/remove_duplicate" />
 
             </group>
             <group android:id="@+id/group_actions_test">
@@ -159,9 +164,7 @@
                     android:title="@string/connection_test_delete_unavailable" />
             </group>
             <group android:id="@+id/group_actions_settings">
-                <item
-                    android:id="@+id/action_remove_duplicate"
-                    android:title="@string/remove_duplicate" />
+
                 
                 <item
                     android:id="@+id/action_hide_unavailable"
@@ -169,6 +172,7 @@
                     android:checkable="true"
                     android:checked="false"
                     app:showAsAction="never" />
+ <!-- 4. 全局模式 -->
                 <item
                     android:id="@+id/action_global_mode"
                     android:title="@string/global_mode"
