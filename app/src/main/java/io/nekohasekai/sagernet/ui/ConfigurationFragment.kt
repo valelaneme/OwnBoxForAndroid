@@ -1537,7 +1537,23 @@ class ConfigurationFragment @JvmOverloads constructor(
             R.id.action_connection_url_test -> {
                 urlTest()
             }
+R.id.action_connection_url_test -> {
+            urlTest()
+        }
 
+        R.id.nav_dashboard -> {
+            val url = "https://board.zash.run.place/#/setup?hostname=127.0.0.1&port=9090&secret=&http=true"
+            try {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+                startActivity(intent)
+            } catch (e: Exception) {
+                context?.let { ctx ->
+                    Toast.makeText(ctx, "无法打开浏览器", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
             R.id.action_connection_tcp_ping -> {
                 tcpPingTest()
             }
